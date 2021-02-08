@@ -1,7 +1,14 @@
+import React from "react";
 import logo from './logo.svg';
-import './App.css';
+import './app.css';
 
-function App() {
+function App(props) {
+  const { onCreate } = props;
+
+  React.useEffect(() => {
+    onCreate();
+  }, [onCreate]);
+
   return (
     <div className="App">
       <header className="App-header">
